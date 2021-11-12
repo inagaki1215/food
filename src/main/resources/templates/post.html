@@ -1,0 +1,35 @@
+<!doctype html>
+<head xmlns:th="http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8"/>
+    <title>Hello Thymeleaf</title>
+
+    <meta name="description" content="じゃがりこのカロリー計算アプリケーション">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--CSS -->
+    <link th:href="@{/css/food.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="debuhome"   th:classappend="${(debuFlag ? 'debuhome': '')+(littledebuFlag ? 'littledebuhome': '')+(nodebuFlag ? 'nodebuhome': '')}">
+
+
+    <div class="content">
+
+        <div class="resultmainflase" th:text="${comment}"></div>
+        <div class="month"><span th:text="${kikan}"></span><span>ヶ月後には…</span></div>
+        <div class="kg"><span>+</span><span id="kg" th:text="${kg}"></span><span>kg</span></div>
+        <div class="messages" th:text="${message}"></div>
+
+        <div id="imagecontents">
+            <img class="resultimage" th:if="${nodebuFlag}" th:src="@{/images/noprobrem.png}"/>
+            <img class="resultimage" th:if="${littledebuFlag}" th:src="@{/images/littlefat.png}"/>
+            <img class="resultimage" th:if="${debuFlag}" th:src="@{/images/fat.png}"/>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+</body>

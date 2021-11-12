@@ -1,0 +1,37 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello Thymeleaf</title>
+
+    <meta name="description" content="じゃがりこのカロリー計算アプリケーション">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--CSS -->
+    <link th:href="@{/css/food.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="home" class="big-bg">
+    <div class="content">
+        <div class="mainflase">
+            <h1>毎日食べ続けたら何キロ分？？</h1>
+        </div>
+        <img class="snack" th:src="@{/images/snack_stick.png}" alt="じゃがりこ画像">
+        <img class="weight" th:src="@{/images/weight.png}" alt="体重画像">
+        <img class="arrow" th:src="@{/images/yajitushi.png}" alt="矢印">
+        <p class="countquestion">1日に食べる量(個)</p>
+        <p class="monthquestion">食べ続ける期間(月)</p>
+    </div>
+
+    <form action="/post" method="post">
+        <input class="kosuu" type="textarea" name="kosuu" value="">
+        <input class="kikan" type="textarea" name="kikan" value="">
+        <input class="result" type="submit" value="送信">
+
+
+    </form>
+
+</div>
+</body>
+</html>
